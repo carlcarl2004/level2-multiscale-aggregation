@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# local offline test fixtures and scratch runs
+tmp_synth/
+tmp_synth_*/
+
+# extraction scratch directories
+raw_extract/
+venv/
+.venv/
+
+# local agent/tooling scaffolding
+AGENTS.md

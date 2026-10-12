@@ -1,0 +1,141 @@
+name,definition,unit,known_at
+symbol,see aggregate_level2_minute.py,,bar_end
+trading_date,see aggregate_level2_minute.py,,bar_end
+session,see aggregate_level2_minute.py,,bar_end
+bar_index,see aggregate_level2_minute.py,,bar_end
+bar_seq,see aggregate_level2_minute.py,,bar_end
+bar_start,see aggregate_level2_minute.py,,bar_end
+bar_end,see aggregate_level2_minute.py,,bar_end
+mid,(ask1+bid1)/2/10000,yuan,bar close
+spread,(ask1-bid1)/10000,yuan,bar close
+relative_spread,spread/mid,ratio,bar close
+weighted_mid,(a1*qb1+b1*qa1)/(qa1+qb1)/10000,yuan,bar close
+wm_minus_mid,weighted_mid-mid,yuan,bar close
+depth_bid_1,sum(bid qty 1..1),shares,bar close
+depth_bid_3,sum(bid qty 1..3),shares,bar close
+depth_bid_5,sum(bid qty 1..5),shares,bar close
+depth_bid_10,sum(bid qty 1..10),shares,bar close
+depth_ask_1,sum(ask qty 1..1),shares,bar close
+depth_ask_3,sum(ask qty 1..3),shares,bar close
+depth_ask_5,sum(ask qty 1..5),shares,bar close
+depth_ask_10,sum(ask qty 1..10),shares,bar close
+di_1,(depth_bid_1-depth_ask_1)/(depth_bid_1+depth_ask_1),ratio,bar close
+di_3,(depth_bid_3-depth_ask_3)/(depth_bid_3+depth_ask_3),ratio,bar close
+di_5,(depth_bid_5-depth_ask_5)/(depth_bid_5+depth_ask_5),ratio,bar close
+di_10,(depth_bid_10-depth_ask_10)/(depth_bid_10+depth_ask_10),ratio,bar close
+acc_price_diff,sum(ask price 1..10)-sum(bid price 1..10),1/10000 yuan,bar close
+acc_size_diff,sum(bid qty 1..10)-sum(ask qty 1..10),shares,bar close
+depth_hhi_bid,sum((q_i/sum(q))^2) over bid levels,ratio,bar close
+depth_hhi_ask,sum((q_i/sum(q))^2) over ask levels,ratio,bar close
+slope_bid,OLS slope of cumulative bid depth share on distance from mid in ticks,ratio/tick,bar close
+slope_ask,OLS slope of cumulative ask depth share on distance from mid in ticks,ratio/tick,bar close
+quote_age_s,bar_end minus timestamp of latest snapshot at or before bar_end,seconds,bar_end
+stale_quote,1 if quote_age_s > max_quote_age,flag,bar_end
+snap_count,snapshots inside the bar,count,bar_end
+valid_l1,1 if ask1 > 0 and bid1 > 0,flag,bar close
+locked_count,snapshots with bid1 == ask1,count,bar_end
+crossed_count,snapshots with bid1 > ask1,count,bar_end
+twap_mid,"time weighted mid over the bar, stale segments excluded",yuan,bar_end
+twap_spread,time weighted spread over the bar,yuan,bar_end
+twap_wm,time weighted weighted_mid over the bar,yuan,bar_end
+twap_coverage,share of the bar covered by non-stale valid quotes,ratio,bar_end
+mid_open,first observed mid inside the bar,yuan,bar_end
+mid_close,mid at bar_end,yuan,bar_end
+mid_ret,log(mid_close/mid_open),log return,bar_end
+mid_min,minimum observed mid inside the bar,yuan,bar_end
+mid_max,maximum observed mid inside the bar,yuan,bar_end
+mid_range,mid_max-mid_min,yuan,bar_end
+mid_std,population std of observed mids inside the bar,yuan,bar_end
+realized_vol,sqrt(sum of squared consecutive log-mid changes in the bar),log return,bar_end
+ofi_raw,sum of Cont-Kukanov-Stoikov L1 quote OFI over consecutive snapshots,shares,bar_end
+ofi_count,snapshot transitions used for ofi_raw,count,bar_end
+trade_buy_qty_1m,"quantity of B side trade rows, summed over the trailing 1 minute window",shares,bar_end trailing 1m
+trade_sell_qty_1m,"quantity of S side trade rows, summed over the trailing 1 minute window",shares,bar_end trailing 1m
+trade_unknown_qty_1m,"quantity of trade rows with empty side, summed over the trailing 1 minute window",shares,bar_end trailing 1m
+trade_buy_count_1m,"number of B side trade rows, summed over the trailing 1 minute window",count,bar_end trailing 1m
+trade_sell_count_1m,"number of S side trade rows, summed over the trailing 1 minute window",count,bar_end trailing 1m
+trade_count_1m,"valid trade rows, summed over the trailing 1 minute window",count,bar_end trailing 1m
+trade_amount_1m,"sum(price*qty)/10000 over valid trade rows, summed over the trailing 1 minute window",yuan,bar_end trailing 1m
+order_buy_qty_1m,"new bid order quantity, summed over the trailing 1 minute window",shares,bar_end trailing 1m
+order_sell_qty_1m,"new ask order quantity, summed over the trailing 1 minute window",shares,bar_end trailing 1m
+order_unknown_qty_1m,"new order quantity with empty side, summed over the trailing 1 minute window",shares,bar_end trailing 1m
+order_count_1m,"new order rows (SZ order file, SH non-cancel rows), summed over the trailing 1 minute window",count,bar_end trailing 1m
+cancel_buy_qty_1m,"cancelled bid quantity (SZ code C with bid ref, SH type D), summed over the trailing 1 minute window",shares,bar_end trailing 1m
+cancel_sell_qty_1m,"cancelled ask quantity, summed over the trailing 1 minute window",shares,bar_end trailing 1m
+cancel_unknown_qty_1m,"cancelled quantity with unknown side, summed over the trailing 1 minute window",shares,bar_end trailing 1m
+cancel_count_1m,"cancellation rows, summed over the trailing 1 minute window",count,bar_end trailing 1m
+trade_imb_1m,"(buy_qty-sell_qty)/(buy_qty+sell_qty), summed over the trailing 1 minute window",ratio,bar_end trailing 1m
+order_imb_1m,"(order_buy_qty-order_sell_qty)/(sum), summed over the trailing 1 minute window",ratio,bar_end trailing 1m
+cancel_imb_1m,"(cancel_buy_qty-cancel_sell_qty)/(sum), summed over the trailing 1 minute window",ratio,bar_end trailing 1m
+trade_amount_per_min_1m,"trade_amount divided by minutes in the window, summed over the trailing 1 minute window",yuan/min,bar_end trailing 1m
+trade_count_per_min_1m,"trade_count divided by minutes in the window, summed over the trailing 1 minute window",count/min,bar_end trailing 1m
+order_count_per_min_1m,"order_count divided by minutes in the window, summed over the trailing 1 minute window",count/min,bar_end trailing 1m
+ofi_per_min_1m,"ofi_raw divided by minutes in the window, summed over the trailing 1 minute window",shares/min,bar_end trailing 1m
+trade_vwap_1m,"trade_amount divided by traded quantity, summed over the trailing 1 minute window",yuan,bar_end trailing 1m
+nb_bars_1m,bars available in the trailing window; warmup=1 marks a partial window,count,bar_end
+warmup_1m,bars available in the trailing window; warmup=1 marks a partial window,count,bar_end
+trade_buy_qty_5m,"quantity of B side trade rows, summed over the trailing 5 minute window",shares,bar_end trailing 5m
+trade_sell_qty_5m,"quantity of S side trade rows, summed over the trailing 5 minute window",shares,bar_end trailing 5m
+trade_unknown_qty_5m,"quantity of trade rows with empty side, summed over the trailing 5 minute window",shares,bar_end trailing 5m
+trade_buy_count_5m,"number of B side trade rows, summed over the trailing 5 minute window",count,bar_end trailing 5m
+trade_sell_count_5m,"number of S side trade rows, summed over the trailing 5 minute window",count,bar_end trailing 5m
+trade_count_5m,"valid trade rows, summed over the trailing 5 minute window",count,bar_end trailing 5m
+trade_amount_5m,"sum(price*qty)/10000 over valid trade rows, summed over the trailing 5 minute window",yuan,bar_end trailing 5m
+order_buy_qty_5m,"new bid order quantity, summed over the trailing 5 minute window",shares,bar_end trailing 5m
+order_sell_qty_5m,"new ask order quantity, summed over the trailing 5 minute window",shares,bar_end trailing 5m
+order_unknown_qty_5m,"new order quantity with empty side, summed over the trailing 5 minute window",shares,bar_end trailing 5m
+order_count_5m,"new order rows (SZ order file, SH non-cancel rows), summed over the trailing 5 minute window",count,bar_end trailing 5m
+cancel_buy_qty_5m,"cancelled bid quantity (SZ code C with bid ref, SH type D), summed over the trailing 5 minute window",shares,bar_end trailing 5m
+cancel_sell_qty_5m,"cancelled ask quantity, summed over the trailing 5 minute window",shares,bar_end trailing 5m
+cancel_unknown_qty_5m,"cancelled quantity with unknown side, summed over the trailing 5 minute window",shares,bar_end trailing 5m
+cancel_count_5m,"cancellation rows, summed over the trailing 5 minute window",count,bar_end trailing 5m
+ofi_raw_5m,"sum of Cont-Kukanov-Stoikov L1 quote OFI over consecutive snapshots, summed over the trailing 5 minute window",shares,bar_end trailing 5m
+trade_imb_5m,"(buy_qty-sell_qty)/(buy_qty+sell_qty), summed over the trailing 5 minute window",ratio,bar_end trailing 5m
+order_imb_5m,"(order_buy_qty-order_sell_qty)/(sum), summed over the trailing 5 minute window",ratio,bar_end trailing 5m
+cancel_imb_5m,"(cancel_buy_qty-cancel_sell_qty)/(sum), summed over the trailing 5 minute window",ratio,bar_end trailing 5m
+trade_amount_per_min_5m,"trade_amount divided by minutes in the window, summed over the trailing 5 minute window",yuan/min,bar_end trailing 5m
+trade_count_per_min_5m,"trade_count divided by minutes in the window, summed over the trailing 5 minute window",count/min,bar_end trailing 5m
+order_count_per_min_5m,"order_count divided by minutes in the window, summed over the trailing 5 minute window",count/min,bar_end trailing 5m
+ofi_per_min_5m,"ofi_raw divided by minutes in the window, summed over the trailing 5 minute window",shares/min,bar_end trailing 5m
+trade_vwap_5m,"trade_amount divided by traded quantity, summed over the trailing 5 minute window",yuan,bar_end trailing 5m
+nb_bars_5m,bars available in the trailing window; warmup=1 marks a partial window,count,bar_end
+warmup_5m,bars available in the trailing window; warmup=1 marks a partial window,count,bar_end
+trade_buy_qty_30m,"quantity of B side trade rows, summed over the trailing 30 minute window",shares,bar_end trailing 30m
+trade_sell_qty_30m,"quantity of S side trade rows, summed over the trailing 30 minute window",shares,bar_end trailing 30m
+trade_unknown_qty_30m,"quantity of trade rows with empty side, summed over the trailing 30 minute window",shares,bar_end trailing 30m
+trade_buy_count_30m,"number of B side trade rows, summed over the trailing 30 minute window",count,bar_end trailing 30m
+trade_sell_count_30m,"number of S side trade rows, summed over the trailing 30 minute window",count,bar_end trailing 30m
+trade_count_30m,"valid trade rows, summed over the trailing 30 minute window",count,bar_end trailing 30m
+trade_amount_30m,"sum(price*qty)/10000 over valid trade rows, summed over the trailing 30 minute window",yuan,bar_end trailing 30m
+order_buy_qty_30m,"new bid order quantity, summed over the trailing 30 minute window",shares,bar_end trailing 30m
+order_sell_qty_30m,"new ask order quantity, summed over the trailing 30 minute window",shares,bar_end trailing 30m
+order_unknown_qty_30m,"new order quantity with empty side, summed over the trailing 30 minute window",shares,bar_end trailing 30m
+order_count_30m,"new order rows (SZ order file, SH non-cancel rows), summed over the trailing 30 minute window",count,bar_end trailing 30m
+cancel_buy_qty_30m,"cancelled bid quantity (SZ code C with bid ref, SH type D), summed over the trailing 30 minute window",shares,bar_end trailing 30m
+cancel_sell_qty_30m,"cancelled ask quantity, summed over the trailing 30 minute window",shares,bar_end trailing 30m
+cancel_unknown_qty_30m,"cancelled quantity with unknown side, summed over the trailing 30 minute window",shares,bar_end trailing 30m
+cancel_count_30m,"cancellation rows, summed over the trailing 30 minute window",count,bar_end trailing 30m
+ofi_raw_30m,"sum of Cont-Kukanov-Stoikov L1 quote OFI over consecutive snapshots, summed over the trailing 30 minute window",shares,bar_end trailing 30m
+trade_imb_30m,"(buy_qty-sell_qty)/(buy_qty+sell_qty), summed over the trailing 30 minute window",ratio,bar_end trailing 30m
+order_imb_30m,"(order_buy_qty-order_sell_qty)/(sum), summed over the trailing 30 minute window",ratio,bar_end trailing 30m
+cancel_imb_30m,"(cancel_buy_qty-cancel_sell_qty)/(sum), summed over the trailing 30 minute window",ratio,bar_end trailing 30m
+trade_amount_per_min_30m,"trade_amount divided by minutes in the window, summed over the trailing 30 minute window",yuan/min,bar_end trailing 30m
+trade_count_per_min_30m,"trade_count divided by minutes in the window, summed over the trailing 30 minute window",count/min,bar_end trailing 30m
+order_count_per_min_30m,"order_count divided by minutes in the window, summed over the trailing 30 minute window",count/min,bar_end trailing 30m
+ofi_per_min_30m,"ofi_raw divided by minutes in the window, summed over the trailing 30 minute window",shares/min,bar_end trailing 30m
+trade_vwap_30m,"trade_amount divided by traded quantity, summed over the trailing 30 minute window",yuan,bar_end trailing 30m
+nb_bars_30m,bars available in the trailing window; warmup=1 marks a partial window,count,bar_end
+warmup_30m,bars available in the trailing window; warmup=1 marks a partial window,count,bar_end
+vwap,trade_amount divided by traded quantity of the bar,yuan,bar_end
+avg_trade_size,mean trade size inside the bar,shares,bar_end
+max_trade_size,largest trade inside the bar,shares,bar_end
+large_trade_ratio_x10med,share of trades larger than 10x the bar median size,ratio,bar_end
+iat_mean_s,mean trade inter-arrival time; first gap may start before the bar,seconds,bar_end
+iat_median_s,median trade inter-arrival time,seconds,bar_end
+iat_p90_s,p90 trade inter-arrival time,seconds,bar_end
+zero_gap_ratio,share of trade gaps equal to 0 ms,ratio,bar_end
+trade_amt_rate_ratio_1m_30m,1-minute amount rate divided by 30-minute amount rate,ratio,bar_end
+trade_cnt_rate_ratio_1m_30m,1-minute trade count rate divided by 30-minute trade count rate,ratio,bar_end
+label_fwd_logret_1m,log(next bar close mid / this bar close mid); LABEL not a feature,log return,future
+label_fwd_logret_5m,log(close mid 5 minutes ahead / this close mid); LABEL not a feature,log return,future
+label_fwd_logret_30m,log(close mid 30 minutes ahead / this close mid); LABEL not a feature,log return,future

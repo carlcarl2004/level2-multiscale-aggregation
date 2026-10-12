@@ -1,0 +1,65 @@
+{
+  "date": "20250102",
+  "archive": "/aidata/wentao/market_data/202501/20250102.7z",
+  "raw_dir": null,
+  "symbols_requested": 2,
+  "symbols_processed": 2,
+  "errors": [],
+  "min_unit": "1 minute",
+  "bar_ms": 60000,
+  "bars_per_session": 120,
+  "bar_convention": "bar labelled t covers (t-1min, t]; close state is backward as-of",
+  "sessions": [
+    [
+      "09:30:00.000",
+      "11:30:00.000"
+    ],
+    [
+      "13:00:00.000",
+      "15:00:00.000"
+    ]
+  ],
+  "rolling_windows_min": [
+    1,
+    5,
+    30
+  ],
+  "coarse_tables_min": [
+    5,
+    30
+  ],
+  "max_quote_age_s": 6.0,
+  "close_grace_ms": 1000,
+  "truncate_ms": null,
+  "price_scale": "integer / 10000",
+  "feature_file_1m": "/aidata/wentao/level2_agg_2025/pilot1m_20250102/level2_20250102_1m_features.csv.gz",
+  "feature_file_5m": "/aidata/wentao/level2_agg_2025/pilot1m_20250102/level2_20250102_5m_features.csv.gz",
+  "feature_file_30m": "/aidata/wentao/level2_agg_2025/pilot1m_20250102/level2_20250102_30m_features.csv.gz",
+  "summary_file": "/aidata/wentao/level2_agg_2025/pilot1m_20250102/level2_20250102_daily_summary.csv",
+  "auction_file": "/aidata/wentao/level2_agg_2025/pilot1m_20250102/level2_20250102_auction_features.csv",
+  "columns_1m": 140,
+  "columns_5m": 72,
+  "columns_30m": 71,
+  "reconciliation": [
+    {
+      "symbol": "000001.SZ",
+      "trade_amount": 2102923078.11,
+      "quote_last_cum_amount": 2102923078,
+      "amount_minus_quote_cum": 0.11,
+      "trade_rows": 108734,
+      "quote_last_cum_count": 108734,
+      "bars_plus_auction_minus_file_amount": 0.0
+    },
+    {
+      "symbol": "600000.SH",
+      "trade_amount": 803904040.23,
+      "quote_last_cum_amount": 803904040,
+      "amount_minus_quote_cum": 0.23,
+      "trade_rows": 68602,
+      "quote_last_cum_count": 68602,
+      "bars_plus_auction_minus_file_amount": 0.0
+    }
+  ],
+  "seconds": 2.3,
+  "raw_deleted": false
+}

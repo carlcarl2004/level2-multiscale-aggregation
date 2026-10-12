@@ -1,0 +1,3 @@
+symbol,trading_date,quote_rows,valid_l1_grid_rows,trade_file_rows,trade_rows,cancel_rows,trade_buy_qty,trade_sell_qty,trade_unknown_qty,trade_amount,order_file_rows,new_order_rows,cancel_order_rows,order_buy_qty,order_sell_qty,cancel_order_qty,last_cum_volume,last_cum_amount,last_cum_count
+000001.SZ,20250102,4836,4799,133667,108734,24933,63085827,118873872,0,2102923078.11,144125,144125,0,227664000,259801922,0,181959699,2102923078,108734
+600000.SH,20250102,4969,4802,68602,68602,0,30383249,48523880,0,803904040.23,71056,53567,17489,73162447,60833424,43704361,78907129,803904040,68602

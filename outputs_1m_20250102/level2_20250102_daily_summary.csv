@@ -1,0 +1,3 @@
+symbol,trading_date,quote_rows,bars,bars_with_quote,bars_valid_l1,bars_with_trade,trade_rows,cancel_rows,trade_buy_qty,trade_sell_qty,trade_unknown_qty,trade_amount,sum_bar_trade_amount,auction_trade_amount,bar_plus_auction_trade_amount,order_file_rows,new_order_rows,cancel_order_rows,order_buy_qty,order_sell_qty,cancel_order_qty,quote_rows_bad_time,trade_rows_bad_time,trade_rows_no_price,order_rows_bad_time
+000001.SZ,20250102,4836,240,239,239,238,108734,24933,63085827,118873872,0,2102923078.11,2093310331.11,9612747.0,2102923078.11,144125,144125,0,227664000,259801922,0,0,0,1,0
+600000.SH,20250102,4969,240,240,240,238,68602,0,30383249,48523880,0,803904040.23,801412470.23,2491570.0,803904040.23,71056,53567,17489,73162447,60833424,43704361,0,0,1,0

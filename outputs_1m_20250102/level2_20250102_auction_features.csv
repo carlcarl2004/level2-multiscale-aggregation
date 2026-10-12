@@ -1,0 +1,4 @@
+symbol,trading_date,phase,first_time,last_time,trade_rows,trade_count,trade_buy_qty,trade_sell_qty,trade_unknown_qty,trade_amount,order_rows,order_count,order_buy_qty,order_sell_qty,cancel_count,quote_rows,quote_last_time,quote_last_mid,quote_last_valid_l1
+000001.SZ,20250102,pre_open,09:15:00.000,09:30:00.000,878,265,451400,367900,0,9612747.0,6021,6021,8009700,15865970,613,72,09:30:00.000,11.745,1
+600000.SH,20250102,pre_open,09:14:00.300,09:26:00.000,127,127,190070,51830,0,2491570.0,2207,1602,1488200,2528270,605,171,09:25:02.000,10.295,1
+600000.SH,20250102,post_close,15:00:01.050,15:00:01.050,0,0,0,0,0,0.0,1,1,0,0,0,2,15:00:02.000,10.125,1

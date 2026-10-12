@@ -1,0 +1,217 @@
+{
+  "files": [
+    {
+      "file": "行情(1).csv",
+      "sha256": "8111fa8db12ade132ccc788c35f9ca215b976f6168d884b6178e9341d507adf6",
+      "rows": 3695,
+      "columns": 67,
+      "symbols": [
+        "601869.SH"
+      ],
+      "dates": [
+        20210202
+      ],
+      "duplicates": 0,
+      "backward": 0,
+      "same_timestamp": 0,
+      "time_min": 91103000,
+      "time_max": 150018000,
+      "continuous_positive_gap_top": {
+        "3.0": 2431,
+        "4.0": 304,
+        "2.0": 198,
+        "5.0": 179,
+        "6.0": 162,
+        "7.0": 80,
+        "8.0": 60,
+        "9.0": 44,
+        "10.0": 40,
+        "12.0": 20,
+        "1.0": 18,
+        "11.0": 18
+      },
+      "BS标志": {
+        "nan": 3695
+      },
+      "continuous_valid_l1": 3625,
+      "continuous_locked": 0,
+      "continuous_crossed": 0,
+      "final_totals": {
+        "当日累计成交量": 1550000,
+        "当日成交额": 35703580,
+        "成交笔数": 3898
+      },
+      "cumulative_count_monotonic": true,
+      "increment_volume_equals_cumulative_difference": true
+    },
+    {
+      "file": "行情(2).csv",
+      "sha256": "25949910eaeed5198cd7f82ec3c817bde9bb3aa5ccda4a92613353ca59cadc40",
+      "rows": 4604,
+      "columns": 67,
+      "symbols": [
+        "000026.SZ"
+      ],
+      "dates": [
+        20210203
+      ],
+      "duplicates": 0,
+      "backward": 0,
+      "same_timestamp": 0,
+      "time_min": 91042000,
+      "time_max": 150103000,
+      "continuous_positive_gap_top": {
+        "3.0": 4361,
+        "6.0": 157,
+        "9.0": 17,
+        "12.0": 3
+      },
+      "BS标志": {
+        "nan": 4604
+      },
+      "continuous_valid_l1": 4540,
+      "continuous_locked": 0,
+      "continuous_crossed": 0,
+      "final_totals": {
+        "当日累计成交量": 12100132,
+        "当日成交额": 149819551,
+        "成交笔数": 19595
+      },
+      "cumulative_count_monotonic": true,
+      "increment_volume_equals_cumulative_difference": true
+    },
+    {
+      "file": "逐笔委托(1).csv",
+      "sha256": "944208ba6c143885c365e3705afa832bcd8bb4ba69bc886b1a486b79e9b5d638",
+      "rows": 28067,
+      "columns": 11,
+      "symbols": [
+        "000026.SZ"
+      ],
+      "dates": [
+        20210203
+      ],
+      "duplicates": 0,
+      "backward": 0,
+      "same_timestamp": 4886,
+      "time_min": 91500040,
+      "time_max": 145959410,
+      "continuous_positive_gap_top": {
+        "0.01": 2786,
+        "0.02": 1139,
+        "0.03": 856,
+        "0.04": 715,
+        "0.05": 644,
+        "0.06": 479,
+        "0.07": 388,
+        "0.08": 362,
+        "0.09": 306,
+        "0.11": 277,
+        "0.1": 269,
+        "0.12": 250
+      },
+      "委托类型": {
+        "0": 28033,
+        "1": 34
+      },
+      "委托代码": {
+        "S": 14919,
+        "B": 13148
+      }
+    },
+    {
+      "file": "逐笔成交(1).csv",
+      "sha256": "af98b48e543be6969e504a026de2aba2e1fac83d06905a877a2e81cd2687d3e4",
+      "rows": 3898,
+      "columns": 13,
+      "symbols": [
+        "601869.SH"
+      ],
+      "dates": [
+        20210202
+      ],
+      "duplicates": 0,
+      "backward": 0,
+      "same_timestamp": 1366,
+      "time_min": 92500230,
+      "time_max": 150000020,
+      "continuous_positive_gap_top": {
+        "0.06": 32,
+        "0.03": 27,
+        "0.1": 21,
+        "0.09": 20,
+        "0.07": 18,
+        "0.19": 18,
+        "0.36": 16,
+        "0.13": 16,
+        "0.16": 14,
+        "0.15": 11,
+        "0.21": 11,
+        "0.04": 11
+      },
+      "BS标志": {
+        "S": 2660,
+        "B": 1238
+      },
+      "成交代码": {
+        "nan": 3898
+      },
+      "委托代码": {
+        "nan": 3898
+      }
+    },
+    {
+      "file": "逐笔成交(2).csv",
+      "sha256": "88a50f9546f70831010634c664e64273e5a2235b88c9504d5162e85771c62594",
+      "rows": 26005,
+      "columns": 13,
+      "symbols": [
+        "000026.SZ"
+      ],
+      "dates": [
+        20210203
+      ],
+      "duplicates": 0,
+      "backward": 0,
+      "same_timestamp": 11418,
+      "time_min": 91500540,
+      "time_max": 150000000,
+      "continuous_positive_gap_top": {
+        "0.01": 1710,
+        "0.02": 632,
+        "0.03": 410,
+        "0.04": 353,
+        "0.05": 351,
+        "0.06": 261,
+        "0.08": 199,
+        "0.07": 189,
+        "0.09": 179,
+        "0.1": 145,
+        "0.11": 144,
+        "0.12": 131
+      },
+      "BS标志": {
+        "B": 10483,
+        "S": 9112,
+        " ": 6410
+      },
+      "成交代码": {
+        "0": 19595,
+        "C": 6410
+      },
+      "委托代码": {
+        "0": 26005
+      }
+    }
+  ],
+  "sz_linkage": {
+    "order_id_unique": true,
+    "cancel_exactly_one_nonzero_ref": 6410,
+    "cancel_rows": 6410,
+    "trade_bid_ref_match": 1.0,
+    "trade_ask_ref_match": 1.0,
+    "cancel_ref_match": 1.0,
+    "orders_negative_remaining": 0,
+    "orders_positive_remaining": 831
+  }
+}
